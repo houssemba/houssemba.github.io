@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Houssem&#39;s blog</title>
-    <link>https://houssem.dev/tags/</link>
+    <link>https://www.houssem.dev/tags/</link>
     <description>Recent content in Tags on Houssem&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 31 Dec 2020 18:25:32 +0100</lastBuildDate>
     
-	<atom:link href="https://houssem.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.houssem.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>development certificate</title>
-      <link>https://houssem.dev/tags/development-certificate/</link>
+      <link>https://www.houssem.dev/tags/development-certificate/</link>
       <pubDate>Thu, 31 Dec 2020 18:25:32 +0100</pubDate>
       
-      <guid>https://houssem.dev/tags/development-certificate/</guid>
+      <guid>https://www.houssem.dev/tags/development-certificate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>https</title>
-      <link>https://houssem.dev/tags/https/</link>
+      <link>https://www.houssem.dev/tags/https/</link>
       <pubDate>Thu, 31 Dec 2020 18:25:32 +0100</pubDate>
       
-      <guid>https://houssem.dev/tags/https/</guid>
+      <guid>https://www.houssem.dev/tags/https/</guid>
       <description></description>
     </item>
     
     <item>
       <title>localhost</title>
-      <link>https://houssem.dev/tags/localhost/</link>
+      <link>https://www.houssem.dev/tags/localhost/</link>
       <pubDate>Thu, 31 Dec 2020 18:25:32 +0100</pubDate>
       
-      <guid>https://houssem.dev/tags/localhost/</guid>
+      <guid>https://www.houssem.dev/tags/localhost/</guid>
       <description></description>
     </item>
     
     <item>
       <title>locally-trusted</title>
-      <link>https://houssem.dev/tags/locally-trusted/</link>
+      <link>https://www.houssem.dev/tags/locally-trusted/</link>
       <pubDate>Thu, 31 Dec 2020 18:25:32 +0100</pubDate>
       
-      <guid>https://houssem.dev/tags/locally-trusted/</guid>
+      <guid>https://www.houssem.dev/tags/locally-trusted/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mkcert</title>
-      <link>https://houssem.dev/tags/mkcert/</link>
+      <link>https://www.houssem.dev/tags/mkcert/</link>
       <pubDate>Thu, 31 Dec 2020 18:25:32 +0100</pubDate>
       
-      <guid>https://houssem.dev/tags/mkcert/</guid>
+      <guid>https://www.houssem.dev/tags/mkcert/</guid>
       <description></description>
     </item>
     

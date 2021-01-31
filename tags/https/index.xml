@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>https on Houssem&#39;s blog</title>
-    <link>https://houssem.dev/tags/https/</link>
+    <link>https://www.houssem.dev/tags/https/</link>
     <description>Recent content in https on Houssem&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 31 Dec 2020 18:25:32 +0100</lastBuildDate>
     
-	<atom:link href="https://houssem.dev/tags/https/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.houssem.dev/tags/https/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to enable https on your local development environment</title>
-      <link>https://houssem.dev/posts/use-https-local-dev-environment/</link>
+      <link>https://www.houssem.dev/posts/use-https-local-dev-environment/</link>
       <pubDate>Thu, 31 Dec 2020 18:25:32 +0100</pubDate>
       
-      <guid>https://houssem.dev/posts/use-https-local-dev-environment/</guid>
+      <guid>https://www.houssem.dev/posts/use-https-local-dev-environment/</guid>
       <description>Enabling SSL locally allows you to have the closest environment to production. One of the advantages is to have the Secure-Only cookies on your local environment without changing the code.
 A cookie with the Secure attribute is sent to the server only over HTTPS protocol. It will not be send/set with HTTP (except on localhost). We use a secure cookie to prevent it from being accessible by a man-in-the-middle attacker.</description>
     </item>
