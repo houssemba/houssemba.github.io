@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Sign your git commits now ! | Houssem&#39;s blog</title>
+  <meta name="description" content="Houssem, Software engineer since 2014, currently at Malt. I&#39;m interested in web technologies and security.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Sign your git commits now !" />
+<meta property="og:description" content="In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whatever you want as a commit author. You can commit as Linus Torvalds if you want.
+All you need to do to impersonate someone is :
+git config --global user.name &#34;Linus Torvalds&#34; git config --global user.email &#34;torvalds@linux-foundation.org&#34; Git add, commit &amp; push !" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.houssem.dev/posts/sign-git-commits-using-gpg/" />
+<meta property="article:published_time" content="2021-02-06T18:29:19+01:00" />
+<meta property="article:modified_time" content="2021-02-06T18:29:19+01:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sign your git commits now !"/>
+<meta name="twitter:description" content="In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whatever you want as a commit author. You can commit as Linus Torvalds if you want.
+All you need to do to impersonate someone is :
+git config --global user.name &#34;Linus Torvalds&#34; git config --global user.email &#34;torvalds@linux-foundation.org&#34; Git add, commit &amp; push !"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://www.houssem.dev/css/style-dark.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://www.houssem.dev/posts/use-https-local-dev-environment/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&text=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&is_video=false&description=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Sign%20your%20git%20commits%20now%20%21&body=Check out this article: https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&name=Sign%20your%20git%20commits%20now%20%21&description=In%20this%20blog%20post%2c%20we%20will%20talk%20about%20git%20commits%20and%20how%20to%20protect%20yourself%20and%20your%20organization%20from%20spoofing.%20As%20you%20may%20know%2c%20when%20you%20use%20Git%2c%20you%20can%20set%20whatever%20you%20want%20as%20a%20commit%20author.%20You%20can%20commit%20as%20Linus%20Torvalds%20if%20you%20want.%0aAll%20you%20need%20to%20do%20to%20impersonate%20someone%20is%20%3a%0agit%20config%20--global%20user.name%20%26%2334%3bLinus%20Torvalds%26%2334%3b%20git%20config%20--global%20user.email%20%26%2334%3btorvalds%40linux-foundation.org%26%2334%3b%20Git%20add%2c%20commit%20%26amp%3b%20push%20%21">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&t=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-sign-your-git-commits-using-gpg">How to sign your git commits using GPG</a>
+      <ul>
+        <li><a href="#configure-git">Configure git</a></li>
+        <li><a href="#verify-commit---github">Verify commit - Github</a></li>
+        <li><a href="#verify-commit---gitlab">Verify commit - Gitlab</a></li>
+      </ul>
+    </li>
+    <li><a href="#gpg">GPG</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Sign your git commits now !
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-02-06 18:29:19 &#43;0100 CET" itemprop="datePublished">2021-02-06</time>
+          
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/spoofing" rel="tag">Spoofing</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/gpg" rel="tag">GPG</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/git" rel="tag">Git</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/commits" rel="tag">Commits</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/spoof" rel="tag">Spoof</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing.
+As you may know, when you use Git, you can set whatever you want as a commit author. You can commit as <a href="https://github.com/torvalds/linux/pull/17#issuecomment-5654674">Linus Torvalds</a> if you want.</p>
+<p>All you need to do to impersonate someone is :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global user.name <span style="color:#e6db74">&#34;Linus Torvalds&#34;</span>
+git config --global user.email <span style="color:#e6db74">&#34;torvalds@linux-foundation.org&#34;</span>
+</code></pre></div><p>Git add, commit &amp; push ! Voilà !</p>
+<p><img src="/posts/02-sign-git-commits/sign-git-commits.png" alt="Git commits spoofing screenshot"></p>
+<h2 id="how-to-sign-your-git-commits-using-gpg">How to sign your git commits using GPG</h2>
+<p>There are many ways to generate a gpg keypair. You can use either the plain <code>gpg</code> command or <a href="https://keybase.io/">keybase</a>.</p>
+<p>Personally, I like Keybase. It allows you to manage your gpg keys easily and it&rsquo;s very simple to use. You can sync your keys on multiple computers and lots of other features.</p>
+<h3 id="configure-git">Configure git</h3>
+<p>I assume that you have already installed and configured GnuPG (through keybase or other methods)</p>
+<p>If it&rsquo;s done, this command should give you the identifier of your secret key :</p>
+<pre><code>gpg --list-secret-keys --keyid-format LONG
+</code></pre><p>You can also verify that you have properly configured your public key</p>
+<pre><code>gpg --list-keys --keyid-format LONG
+</code></pre><p>You can enable commit signing on-demand using the <code>-S</code> option of the git command. Once per session (this first time), you will have to fill in your private key passphrase.</p>
+<pre><code>git commit -S -m &quot;My signed commit&quot; 
+</code></pre><p>If you want to enable signing for all your commits. You can configure it globally :</p>
+<pre><code>git config --global user.signingkey $(gpg --list-keys --keyid-format LONG| grep pub | grep -o -P '(?&lt;=/)[A-Z0-9]{16}')
+git config --global commit.gpgsign true
+</code></pre><p><img src="/posts/02-sign-git-commits/unverified-signed-commit.png" alt="Unverified signed commit"></p>
+<p>The commit is now signed, but it&rsquo;s not verified by Github.</p>
+<p>You need to get your public key for the next step</p>
+<pre><code>gpg --armor --export EMAIL_ADDRESS
+</code></pre><h3 id="verify-commit---github">Verify commit - Github</h3>
+<p>Go to the <strong>SSH and GPG keys</strong> settings page on <a href="https://www.github.com/settings/keys">Github</a> and click on <strong>New GPG key</strong> button. Then add your public key and click Add GPG key.</p>
+<p><img src="/posts/02-sign-git-commits/add-gpg-public-key-github.png" alt="Add gpg key github"></p>
+<p><img src="/posts/02-sign-git-commits/signed-commit-github.png" alt="Verified commit"></p>
+<h3 id="verify-commit---gitlab">Verify commit - Gitlab</h3>
+<p>Go to the <strong>GPG Keys</strong> settings page on <a href="https://gitlab.com/-/profile/gpg_keys">Gitlab</a>. Paste your public key and click on Add key.</p>
+<p><img src="/posts/02-sign-git-commits/add-gpg-public-key-gitlab.png" alt="Add gpg key gitlab"></p>
+<p><img src="/posts/02-sign-git-commits/signed-commit-gitlab.png" alt="Verified commit"></p>
+<h2 id="gpg">GPG</h2>
+<p>You know now how to sign your git commits using GPG and protect yourself from spoofing. GPG has many usages, you can encrypt communication (email), files, artifacts&hellip; Signing artifacts is a good idea for a future blog post ;)</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">All posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-sign-your-git-commits-using-gpg">How to sign your git commits using GPG</a>
+      <ul>
+        <li><a href="#configure-git">Configure git</a></li>
+        <li><a href="#verify-commit---github">Verify commit - Github</a></li>
+        <li><a href="#verify-commit---gitlab">Verify commit - Gitlab</a></li>
+      </ul>
+    </li>
+    <li><a href="#gpg">GPG</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&text=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&is_video=false&description=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Sign%20your%20git%20commits%20now%20%21&body=Check out this article: https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&title=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&name=Sign%20your%20git%20commits%20now%20%21&description=In%20this%20blog%20post%2c%20we%20will%20talk%20about%20git%20commits%20and%20how%20to%20protect%20yourself%20and%20your%20organization%20from%20spoofing.%20As%20you%20may%20know%2c%20when%20you%20use%20Git%2c%20you%20can%20set%20whatever%20you%20want%20as%20a%20commit%20author.%20You%20can%20commit%20as%20Linus%20Torvalds%20if%20you%20want.%0aAll%20you%20need%20to%20do%20to%20impersonate%20someone%20is%20%3a%0agit%20config%20--global%20user.name%20%26%2334%3bLinus%20Torvalds%26%2334%3b%20git%20config%20--global%20user.email%20%26%2334%3btorvalds%40linux-foundation.org%26%2334%3b%20Git%20add%2c%20commit%20%26amp%3b%20push%20%21">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&t=Sign%20your%20git%20commits%20now%20%21">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Houssem&#39;s blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+
+
+</html>

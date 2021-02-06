@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Houssem&#39;s blog</title>
-    <link>https://www.houssem.dev/posts/</link>
-    <description>Recent content in Posts on Houssem&#39;s blog</description>
+    <title>Spoofing on Houssem&#39;s blog</title>
+    <link>https://www.houssem.dev/tags/spoofing/</link>
+    <description>Recent content in Spoofing on Houssem&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Feb 2021 18:29:19 +0100</lastBuildDate>
     
-	<atom:link href="https://www.houssem.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.houssem.dev/tags/spoofing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <description>In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whatever you want as a commit author. You can commit as Linus Torvalds if you want.
 All you need to do to impersonate someone is :
 git config --global user.name &amp;#34;Linus Torvalds&amp;#34; git config --global user.email &amp;#34;torvalds@linux-foundation.org&amp;#34; Git add, commit &amp;amp; push !</description>
-    </item>
-    
-    <item>
-      <title>How to enable https on your local development environment</title>
-      <link>https://www.houssem.dev/posts/use-https-local-dev-environment/</link>
-      <pubDate>Thu, 31 Dec 2020 18:25:32 +0100</pubDate>
-      
-      <guid>https://www.houssem.dev/posts/use-https-local-dev-environment/</guid>
-      <description>Enabling SSL locally allows you to have the closest environment to production. One of the advantages is to have the Secure-Only cookies on your local environment without changing the code.
-A cookie with the Secure attribute is sent to the server only over HTTPS protocol. It will not be send/set with HTTP (except on localhost). We use a secure cookie to prevent it from being accessible by a man-in-the-middle attacker.</description>
     </item>
     
   </channel>

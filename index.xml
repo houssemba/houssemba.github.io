@@ -6,10 +6,21 @@
     <description>Recent content on Houssem&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Dec 2020 18:25:32 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 06 Feb 2021 18:29:19 +0100</lastBuildDate>
     
 	<atom:link href="https://www.houssem.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sign your git commits now !</title>
+      <link>https://www.houssem.dev/posts/sign-git-commits-using-gpg/</link>
+      <pubDate>Sat, 06 Feb 2021 18:29:19 +0100</pubDate>
+      
+      <guid>https://www.houssem.dev/posts/sign-git-commits-using-gpg/</guid>
+      <description>In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whatever you want as a commit author. You can commit as Linus Torvalds if you want.
+All you need to do to impersonate someone is :
+git config --global user.name &amp;#34;Linus Torvalds&amp;#34; git config --global user.email &amp;#34;torvalds@linux-foundation.org&amp;#34; Git add, commit &amp;amp; push !</description>
+    </item>
     
     <item>
       <title>How to enable https on your local development environment</title>

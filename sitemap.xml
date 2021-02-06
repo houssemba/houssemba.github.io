@@ -3,12 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.houssem.dev/tags/development-certificate/</loc>
-    <lastmod>2020-12-31T18:25:32+01:00</lastmod>
+    <loc>https://www.houssem.dev/tags/commits/</loc>
+    <lastmod>2021-02-06T18:29:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.houssem.dev/tags/git/</loc>
+    <lastmod>2021-02-06T18:29:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.houssem.dev/tags/gpg/</loc>
+    <lastmod>2021-02-06T18:29:19+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.houssem.dev/</loc>
+    <lastmod>2021-02-06T18:29:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.houssem.dev/posts/</loc>
+    <lastmod>2021-02-06T18:29:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.houssem.dev/posts/sign-git-commits-using-gpg/</loc>
+    <lastmod>2021-02-06T18:29:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.houssem.dev/tags/spoof/</loc>
+    <lastmod>2021-02-06T18:29:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.houssem.dev/tags/spoofing/</loc>
+    <lastmod>2021-02-06T18:29:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.houssem.dev/tags/</loc>
+    <lastmod>2021-02-06T18:29:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.houssem.dev/tags/development-certificate/</loc>
     <lastmod>2020-12-31T18:25:32+01:00</lastmod>
   </url>
   
@@ -34,16 +74,6 @@
   
   <url>
     <loc>https://www.houssem.dev/tags/mkcert/</loc>
-    <lastmod>2020-12-31T18:25:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.houssem.dev/posts/</loc>
-    <lastmod>2020-12-31T18:25:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.houssem.dev/tags/</loc>
     <lastmod>2020-12-31T18:25:32+01:00</lastmod>
   </url>
   
