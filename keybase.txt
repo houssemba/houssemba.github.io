@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/houssem
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://houssem.dev
+  * I am houssem (https://keybase.io/houssem) on keybase.
+  * I have a public key with fingerprint F5DC 79BE DC88 371F D645  FD65 AC6F 62ED A365 773B
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012016b9e30666139577646dff4f739fc9a1cbbba435d857244098f1d94c8de2bb1b0a",
+      "fingerprint": "f5dc79bedc88371fd645fd65ac6f62eda365773b",
+      "host": "keybase.io",
+      "key_id": "ac6f62eda365773b",
+      "kid": "0101ca9446f1294ea4f50f32afd6ec9ada56701f9bfa8a1b3e988641814bbdd94f9a0a",
+      "uid": "23dc685c39f6386815dddf759cb12419",
+      "username": "houssem"
+    },
+    "service": {
+      "hostname": "houssem.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1612633029,
+  "expire_in": 157680000,
+  "prev": "e3c16151573da6643a3919d41e4dfecdbfa7a8572ac0f244241d0ea3418d54b6",
+  "seqno": 16,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNqAnicbVJrTBRHHD+ewikKCpIKmnZtbMvD7nN292oRtILU2lpAeVS57u7Mwt4d
+d3B3oEAJyAkCiW3VlEdAU0vrF6AKpbEhJoJgjdRUKbHGSukjoLUtCiKJoITOkvqh
+SefDTGbm9/r/ZwaCfAxGr3aHPNGK9r/m9V1ffaHh/XXDl0oJ2QGLCVMpYUWLC7JB
+5HKbrRokTARJ0SQFZBExJACAYkSO5wELoKqyKs+IqiJKlCLLssQyHBQ4nmZZUhRU
+CoqsIkBEyzIlkxIRQ6iaPQc5852a3Y1lVQ4qvCgjqAgCw1MqBCyHJ05SgApoBCUG
+YCNGxsRch0tn4HCy5EIbNQc+wxvzYrz/wT/LTVKKJLIsUClaZJHEqhypMrSEXRAO
+DSUO8CSlirIqCRIlM0gUBMBSAsXKMsTpVVFazF24KEczUAECp+CKASMAgeIghCrP
+iYpM0Swl6kAXctqlPITRuY5ClwvlEWUxBD4s0hSk91Uv5L+AjRAVYWa+0+F2KA6b
+fuF257tMOtFdnK8j9yPZ/K+GWdbsEHcRM4qQ06U57ISJwkjFremiFKBowDAkLcYQ
+6EC+5kRmTUdwPBBIPHQfbGciEKNgLIcvGCgBwDISI1IiZCnEQhUpEHeEl/SnlBRS
+xe+J64MkkhjcHMixMiD0qgrsDt0S55RysKZLy7FL7kInIsou9u31NXgZDf5+3vr3
+MhgDg599OvL8ioXEVN+Lv2/zXGmLOB61fvPWyp7u1nt2drjd2jlnmu3MePeTmRDm
+p9T+n63Tefvq/Nc9OOuVs3WuztIe3HP15pmkqNxPTw0EfRn1941HCbzt2HhGbKQn
+861LOxMD9tqmurzvuZes6fdNShycjgumC05PxpdPEbM9nsNjlivL73d7lmeuNu9+
+UL0vpPHDrM6d2lBDZFh60/PRA7aEoTo1nEwqST93vzbz69Bp/m7lxOypJsPnk+E+
+R7uSPpgNp73my+cT7l67M9oSlv1FY83ZM10dnhb/tbHh21qOvD164HHt+LUlA5Yf
+V/V71D3OhmNq87K4zcZN1t7mldc/vnErZG5X052+1//4s3ipMTTD80LTjrCi7Ord
+J+Kth4Srth9e/Oj69FxRRn2s+lnKUUu6OdLbdivwpCHtYLPoKRjLe1gbkfXQE+39
+hsGzy3qw0nrht/D5geDViR3pgSGvRNTXth3vqVnzzWRCy4Xy7uRkirnMRx9W5PVD
+Fr8TNSE02cEnBJRNDS6crvorbNWyikcprUPfFpjKZy6PdGshce8sNK5YWlUR8LS6
+qaI1tLTt5q8bZn+xH7Fs2pM28/24T+X2r56bbPQb3NL+ajy4vaNhLi7zSXIjOt/6
+Uu/B0pQZrmqMHoYry2/3TgRlFT/JM+Zn+z49eajr8ejYubVD782n+o6kZW14s6OE
+HSmJqtue9PI/3d68Mw==
+=69dx
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/houssem
+
+==================================================================
