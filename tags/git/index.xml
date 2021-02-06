@@ -17,7 +17,7 @@
       <pubDate>Sat, 06 Feb 2021 18:29:19 +0100</pubDate>
       
       <guid>https://www.houssem.dev/posts/sign-git-commits-using-gpg/</guid>
-      <description>In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whatever you want as a commit author. You can commit as Linus Torvalds if you want.
+      <description>In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whoever you want as a commit author. You can commit as Linus Torvalds if you want.
 All you need to do to impersonate someone is :
 git config --global user.name &amp;#34;Linus Torvalds&amp;#34; git config --global user.email &amp;#34;torvalds@linux-foundation.org&amp;#34; Git add, commit &amp;amp; push !</description>
     </item>

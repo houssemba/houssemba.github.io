@@ -9,7 +9,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Sign your git commits now !" />
-<meta property="og:description" content="In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whatever you want as a commit author. You can commit as Linus Torvalds if you want.
+<meta property="og:description" content="In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whoever you want as a commit author. You can commit as Linus Torvalds if you want.
 All you need to do to impersonate someone is :
 git config --global user.name &#34;Linus Torvalds&#34; git config --global user.email &#34;torvalds@linux-foundation.org&#34; Git add, commit &amp; push !" />
 <meta property="og:type" content="article" />
@@ -19,7 +19,7 @@ git config --global user.name &#34;Linus Torvalds&#34; git config --global user.
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sign your git commits now !"/>
-<meta name="twitter:description" content="In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whatever you want as a commit author. You can commit as Linus Torvalds if you want.
+<meta name="twitter:description" content="In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing. As you may know, when you use Git, you can set whoever you want as a commit author. You can commit as Linus Torvalds if you want.
 All you need to do to impersonate someone is :
 git config --global user.name &#34;Linus Torvalds&#34; git config --global user.email &#34;torvalds@linux-foundation.org&#34; Git add, commit &amp; push !"/>
 
@@ -146,7 +146,7 @@ git config --global user.name &#34;Linus Torvalds&#34; git config --global user.
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&name=Sign%20your%20git%20commits%20now%20%21&description=In%20this%20blog%20post%2c%20we%20will%20talk%20about%20git%20commits%20and%20how%20to%20protect%20yourself%20and%20your%20organization%20from%20spoofing.%20As%20you%20may%20know%2c%20when%20you%20use%20Git%2c%20you%20can%20set%20whatever%20you%20want%20as%20a%20commit%20author.%20You%20can%20commit%20as%20Linus%20Torvalds%20if%20you%20want.%0aAll%20you%20need%20to%20do%20to%20impersonate%20someone%20is%20%3a%0agit%20config%20--global%20user.name%20%26%2334%3bLinus%20Torvalds%26%2334%3b%20git%20config%20--global%20user.email%20%26%2334%3btorvalds%40linux-foundation.org%26%2334%3b%20Git%20add%2c%20commit%20%26amp%3b%20push%20%21">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&name=Sign%20your%20git%20commits%20now%20%21&description=In%20this%20blog%20post%2c%20we%20will%20talk%20about%20git%20commits%20and%20how%20to%20protect%20yourself%20and%20your%20organization%20from%20spoofing.%20As%20you%20may%20know%2c%20when%20you%20use%20Git%2c%20you%20can%20set%20whoever%20you%20want%20as%20a%20commit%20author.%20You%20can%20commit%20as%20Linus%20Torvalds%20if%20you%20want.%0aAll%20you%20need%20to%20do%20to%20impersonate%20someone%20is%20%3a%0agit%20config%20--global%20user.name%20%26%2334%3bLinus%20Torvalds%26%2334%3b%20git%20config%20--global%20user.email%20%26%2334%3btorvalds%40linux-foundation.org%26%2334%3b%20Git%20add%2c%20commit%20%26amp%3b%20push%20%21">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -216,15 +216,15 @@ git config --global user.name &#34;Linus Torvalds&#34; git config --global user.
   
     <div class="content" itemprop="articleBody">
       <p>In this blog post, we will talk about git commits and how to protect yourself and your organization from spoofing.
-As you may know, when you use Git, you can set whatever you want as a commit author. You can commit as <a href="https://github.com/torvalds/linux/pull/17#issuecomment-5654674">Linus Torvalds</a> if you want.</p>
+As you may know, when you use Git, you can set whoever you want as a commit author. You can commit as <a href="https://github.com/torvalds/linux/pull/17#issuecomment-5654674">Linus Torvalds</a> if you want.</p>
 <p>All you need to do to impersonate someone is :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global user.name <span style="color:#e6db74">&#34;Linus Torvalds&#34;</span>
 git config --global user.email <span style="color:#e6db74">&#34;torvalds@linux-foundation.org&#34;</span>
 </code></pre></div><p>Git add, commit &amp; push ! Voilà !</p>
 <p><img src="/posts/02-sign-git-commits/sign-git-commits.png" alt="Git commits spoofing screenshot"></p>
 <h2 id="how-to-sign-your-git-commits-using-gpg">How to sign your git commits using GPG</h2>
-<p>There are many ways to generate a gpg keypair. You can use either the plain <code>gpg</code> command or <a href="https://keybase.io/">keybase</a>.</p>
-<p>Personally, I like Keybase. It allows you to manage your gpg keys easily and it&rsquo;s very simple to use. You can sync your keys on multiple computers and lots of other features.</p>
+<p>There are many ways to generate a gpg keypair. You can either use the plain <code>gpg</code> command or <a href="https://keybase.io/">keybase</a>.</p>
+<p>Personally, I like Keybase. It allows you to manage your gpg keys easily and it&rsquo;s very simple to use. You can sync your keys on multiple computers and many other features.</p>
 <h3 id="configure-git">Configure git</h3>
 <p>I assume that you have already installed and configured GnuPG (through keybase or other methods)</p>
 <p>If it&rsquo;s done, this command should give you the identifier of your secret key :</p>
@@ -233,7 +233,7 @@ git config --global user.email <span style="color:#e6db74">&#34;torvalds@linux-f
 <pre><code>gpg --list-keys --keyid-format LONG
 </code></pre><p>You can enable commit signing on-demand using the <code>-S</code> option of the git command. Once per session (this first time), you will have to fill in your private key passphrase.</p>
 <pre><code>git commit -S -m &quot;My signed commit&quot; 
-</code></pre><p>If you want to enable signing for all your commits. You can configure it globally :</p>
+</code></pre><p>If you want to enable signing for all your commits, you can configure it globally :</p>
 <pre><code>git config --global user.signingkey $(gpg --list-keys --keyid-format LONG| grep pub | grep -o -P '(?&lt;=/)[A-Z0-9]{16}')
 git config --global commit.gpgsign true
 </code></pre><p><img src="/posts/02-sign-git-commits/unverified-signed-commit.png" alt="Unverified signed commit"></p>
@@ -345,7 +345,7 @@ git config --global commit.gpgsign true
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&name=Sign%20your%20git%20commits%20now%20%21&description=In%20this%20blog%20post%2c%20we%20will%20talk%20about%20git%20commits%20and%20how%20to%20protect%20yourself%20and%20your%20organization%20from%20spoofing.%20As%20you%20may%20know%2c%20when%20you%20use%20Git%2c%20you%20can%20set%20whatever%20you%20want%20as%20a%20commit%20author.%20You%20can%20commit%20as%20Linus%20Torvalds%20if%20you%20want.%0aAll%20you%20need%20to%20do%20to%20impersonate%20someone%20is%20%3a%0agit%20config%20--global%20user.name%20%26%2334%3bLinus%20Torvalds%26%2334%3b%20git%20config%20--global%20user.email%20%26%2334%3btorvalds%40linux-foundation.org%26%2334%3b%20Git%20add%2c%20commit%20%26amp%3b%20push%20%21">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.houssem.dev%2fposts%2fsign-git-commits-using-gpg%2f&name=Sign%20your%20git%20commits%20now%20%21&description=In%20this%20blog%20post%2c%20we%20will%20talk%20about%20git%20commits%20and%20how%20to%20protect%20yourself%20and%20your%20organization%20from%20spoofing.%20As%20you%20may%20know%2c%20when%20you%20use%20Git%2c%20you%20can%20set%20whoever%20you%20want%20as%20a%20commit%20author.%20You%20can%20commit%20as%20Linus%20Torvalds%20if%20you%20want.%0aAll%20you%20need%20to%20do%20to%20impersonate%20someone%20is%20%3a%0agit%20config%20--global%20user.name%20%26%2334%3bLinus%20Torvalds%26%2334%3b%20git%20config%20--global%20user.email%20%26%2334%3btorvalds%40linux-foundation.org%26%2334%3b%20Git%20add%2c%20commit%20%26amp%3b%20push%20%21">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
